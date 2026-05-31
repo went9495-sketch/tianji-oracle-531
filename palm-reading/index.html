@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>掌纹密码 · 天机阁</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8378956189153728"
+         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="bg-texture"></div>
+
+        <!-- 第一屏：上传与提问 -->
+        <section class="screen active" id="screen-input">
+            <header class="header">
+                <a href="../index.html" class="back-btn">← 返回</a>
+                <h2 class="page-title">掌纹密码</h2>
+            </header>
+
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="image-input" accept="image/*" hidden>
+                <div class="upload-placeholder" id="upload-placeholder">
+                    <span class="upload-icon">🖐️</span>
+                    <p>上传或拍摄你的手掌</p>
+                    <span class="upload-hint">掌心向上，纹路清晰为佳</span>
+                </div>
+                <img id="preview-image" class="preview-image" style="display: none;">
+            </div>
+
+            <div class="question-area">
+                <h3 class="question-title">你想问什么？</h3>
+                <div class="quick-questions">
+                    <button class="q-btn">我适合什么事业方向？</button>
+                    <button class="q-btn">我今年的整体运势？</button>
+                    <button class="q-btn">我的财富格局如何？</button>
+                    <button class="q-btn">我的贵人在何方？</button>
+                </div>
+                <input type="text" id="custom-question" class="custom-input" placeholder="或输入你的具体问题...">
+            </div>
+
+            <div class="action-area">
+                <button id="btn-analyze" class="main-btn" disabled>开启命格推演</button>
+                <p class="quota-tip" id="quota-tip">今日可用</p>
+            </div>
+        </section>
+
+        <!-- 第二屏：加载 -->
+        <section class="screen" id="screen-loading">
+            <div class="loading-container">
+                <div class="ritual-animation">
+                    <div class="ritual-circle"></div>
+                    <div class="ritual-circle ritual-circle-inner"></div>
+                    <div class="ritual-symbol">☰</div>
+                </div>
+                <h3 class="loading-title">命格推演中</h3>
+                <p class="loading-text" id="loading-text">正在勘察掌丘起伏...</p>
+            </div>
+        </section>
+
+        <!-- 第三屏：批文卡 -->
+        <section class="screen" id="screen-result">
+            <div class="result-container">
+                <div class="archive-card">
+                    <div class="archive-header">
+                        <span class="archive-label">天机 · 命格批文</span>
+                    </div>
+
+                    <div class="identity-section">
+                        <h2 class="identity-title" id="r-title">紫微帝星格</h2>
+                        <div class="rarity-bar">
+                            <span class="rarity-stars" id="r-stars">★★★★★</span>
+                            <span class="rarity-percent" id="r-percent">命格稀有度 0.8%</span>
+                        </div>
+                        <p class="identity-star" id="r-star">主星：紫微</p>
+                    </div>
+
+                    <div class="question-echo" id="r-question"></div>
+
+                    <div class="divider">━━━ 核心批文 ━━━</div>
+                    <div class="conclusion-section">
+                        <p class="conclusion-text" id="r-conclusion"></p>
+                        <p class="reason-text" id="r-reason"></p>
+                    </div>
+
+                    <div class="divider">━━━ 命格证据链 ━━━</div>
+                    <div class="evidences-section" id="r-evidences"></div>
+
+                    <div class="divider">━━━ 行动指引 ━━━</div>
+                    <ul class="advice-section" id="r-advice"></ul>
+
+                    <div class="mystery-section">
+                        <p class="mystery-text">命中尚有一道关隘未解……</p>
+                        <button class="unlock-btn" id="btn-unlock">观看广告解锁完整批文</button>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button id="btn-share" class="main-btn">生成命格卡</button>
+                    <button id="btn-restart" class="outline-btn">换个问题再测</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../shared/share.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
